@@ -13,6 +13,7 @@ new Vue({
 				alert(`Please Enter Your Username and Password`);
 				console.log(`Please Enter Your Username and Password`);
 			} else {
+				alert(`You Created Account; Username:${this.username} and Password:${this.password}`)
 				localStorage.setItem(`username`, this.username);
 				localStorage.setItem(`password`, this.password);
 			}
