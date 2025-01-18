@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SabzLearn | Vue Js | 09</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<script src="script/vue.js"></script>
+	<script src="script/script.js" defer></script>
+</head>
+<body dir="rtl">
+	<div id="forms">
+		<form id="msform">
+			<div v-if="!isLogin">
+				<fieldset id="createAccount">
+					<h2 class="fs-title">Create your account</h2>
+					<input type="text" placeholder="UserName" v-model="username"/>
+					<input type="password" placeholder="Password" v-model="password"/>
+					<input type="password" placeholder="Confirm Password" />
+					<input type="button" class="next action-button" value="Create" @click="create"/>
+					<input type="button" class="next action-button" value="login" @click="isLogin = true" style="background-color: rgb(211, 86, 86)"/>
+				</fieldset>
+			</div>
+			<div v-if="isLogin">
+				<fieldset id="login">
+					<h2 class="fs-title">Login</h2>
+					<input type="text" placeholder="UserName" v-model="username"/>
+					<input type="text" placeholder="Password" v-model="password"/>
+					<input type="button" class="previous action-button" value="Login" @click="loginUser"/>
+					<input style="background-color: rgb(211, 86, 86)" type="button" class="action-button" value="Create Acc" @click="isLogin = false"/>
+				</fieldset>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
